@@ -1,0 +1,251 @@
+/* ========== RESET + BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fbfd;
+    color: #333;
+  }
+  
+  /* ========== NAVBAR ========== */
+  /* Barre nav par défaut (transparente) */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: background 0.4s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* Quand on scrolle, on applique ce style */
+  .navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+  }
+  .logo .img {
+    height: 100px;
+    max-height: 100px;
+    object-fit: contain; ;
+  }
+  
+  .signup-btn {
+    background-color: white;
+    color: #e4e9ff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-btn:hover {
+    /* background-color: #3730a3; */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  .btn-contact {
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+  }
+  .btn-contact:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+  }
+  .btn-contact.scrolled {
+    background-color: white;
+    color: black;
+    /* border: 2px solid #007bff; */
+  } 
+  .signup-btn.scrolled{
+    background-color:  #4f46e5; 
+    color: white;
+  }
+  .login-btn.scrolled{
+    background-color:  lightsteelblue; 
+    color: black;
+  }
+  
+  .login-btn{
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color:rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  .login-btn:hover{
+    /* background-color: #3730a3; */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  .navbar-buttons {
+    display: flex;
+    gap: 15px; /* Espace entre les boutons */
+    align-items: center;
+  }
+   
+  /* ========== HERO SLIDER ========== */
+  .hero {
+    text-align: center;
+    padding: 100px 20px 50px;
+    background: linear-gradient(to right, #c3f0ff, #e4e9ff);
+    overflow: hidden;
+    position: relative;
+    clip-path: ellipse(100% 90% at 50% 0%);
+    z-index: 1;
+  }  
+  .slide-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;  
+    overflow: hidden;
+  }
+  .slide-container h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: grey;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  #animated-text {
+    font-size: 50px;
+    font-weight: bold;
+    transition: transform 0.6s ease-in-out, opacity 0.3s ease-in-out;
+    display: inline-block;
+    position: relative;
+  }  
+  .hero-buttons .btn {
+    margin: 10px;
+    padding: 16px 32px; /* plus grand */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  .button-group {
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+    justify-content: center; /* Centrer les boutons si tu veux */
+    align-items: center;
+  }  
+  
+  .hero-buttons .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .hero-buttons .btn {
+    animation: pulse 3s infinite;
+  }    
+  .primary {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  .secondary {
+    background-color: #e0e7ff;
+    color: #1e3a8a;
+  }
+
+  /* ========== PREVIEW SECTION ========== */
+.preview {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.preview h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #003366;
+}
+
+.screenshots {
+    display: flex;
+    flex-direction: column; /* Les éléments vont se placer en colonne */
+    gap: 40px; /* Espacement entre chaque groupe image + titre */
+}
+
+.screenshot-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacement entre l'image et le titre */
+}
+
+.screenshot-item.reverse {
+    flex-direction: row-reverse; /* Inverse l'ordre de l'image et du titre */
+}
+
+.screenshots img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
+    transition: 0.3s ease;
+    display: block;
+    margin-bottom: 0; /* Pas d'espacement sous l'image, l'espace est géré par le gap */
+}
+
+.screenshot-item h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #003366;
+}
+  .video {
+    display: flex;
+    justify-content: center;
+  }
+  
+  video {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+

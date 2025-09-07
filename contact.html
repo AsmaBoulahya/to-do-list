@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+   <button class="close-btn" onclick="goBack()">&#10005;</button>
+   <!-- <div class="bubble bubble1"></div>
+   <div class="bubble bubble2"></div> -->
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form action="contact.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-icons">
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <pre><b>Organize, Prioritize, Achieve</b></pre>
+  </div>
+  <div class="confirmation" id="confirmation">
+    <p>✅ Your message has been sent successfully!</p>
+  </div>  
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  
+    const form = document.querySelector("form");
+    const confirmation = document.getElementById("confirmation");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche l'envoi traditionnel
+  
+      // Envoie des données en PHP (optionnel si tu veux PHP)
+      fetch("contact.php", {
+        method: "POST",
+        body: new FormData(form),
+      })
+        .then((response) => response.text())
+        .then(() => {
+          confirmation.style.display = "block";
+          form.reset(); // Réinitialiser les champs
+  
+          setTimeout(() => {
+            confirmation.style.display = "none";
+          }, 3000); // Cache le message après 3 secondes
+        });
+    });
+  </script>
+  
+</body>
+</html>

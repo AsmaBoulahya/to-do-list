@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header class="navbar">
+    <div class="logo">
+      <img class="img" src="IMGs/TO__6_-removebg-preview.png" alt="Logo">
+    </div>
+    <form action="signup.html" method="get">
+      <button type="submit" class="login-btn">Sign Up</button>          
+    </form> 
+  </header>
+  <a href="page1.html" class="home-arrow-bottom" title="Accueil">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+  </a>
+  
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+
+  <div class="login-container">
+    <h1>Welcome !</h1>
+
+    <div class="google-btn">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" style="width: 20px; margin-right: 10px;">
+      Continue with Google
+    </div>
+
+    <div class="divider">OR</div>
+
+    <form action="login.php" method="post">
+      <input type="email" name="email" placeholder="Enter your professional email" required>
+      <input type="password" name="password" placeholder="Enter your password" required>      
+      <div class="forgot">forgot password ?</div>
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+
+    <!-- <div class="sso-link">ou se connecter avec le SSO</div> -->
+    <div class="signup-link">
+        You don't have an account? <a href="signup.html">Sing Up</a>
+    </div>
+  </div>
+
+</body>
+</html>

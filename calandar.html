@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DoMe Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #calendar {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      color: black;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .fc-toolbar-title {
+      font-size: 24px;
+    }
+
+    .fc-button {
+      background-color: #4f46e5 !important;
+      border: none !important;
+      color: white !important;
+      border-radius: 6px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📅 DoMe Calendar</h1>
+
+  <div id="calendar"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true,
+        themeSystem: 'standard',
+
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+
+        dateClick: function (info) {
+          const title = prompt("Enter task title:");
+          if (title) {
+            calendar.addEvent({
+              title: title,
+              start: info.dateStr,
+              allDay: true
+            });
+          }
+        },
+
+        events: [
+          {
+            title: 'Example Task',
+            start: new Date().toISOString().split('T')[0]
+          }
+        ]
+      });
+
+      calendar.render();
+    });
+  </script>
+
+</body>
+</html>

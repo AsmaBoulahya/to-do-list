@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Started</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+        .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .close-btn:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #4f46e5;
+    }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <button class="close-btn" onclick="goBack()">&#10005;</button>
+    <h2>Sign up for free</h2>
+    <form id="emailForm" onsubmit="redirectToSignup(event)">
+      <input type="email" id="emailInput" placeholder="Enter your email" required>
+      <button type="submit">Next</button>
+      <pre><b>Organize, Prioritize, Achieve</b></pre>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      if (email) {
+        window.location.href = `signup.html?email=${encodeURIComponent(email)}`;
+      }
+    });
+    function goBack() {
+  window.history.back(); // Retour à la page précédente
+}
+function redirectToSignup(event) {
+        event.preventDefault(); // Empêche le rechargement
+        const email = document.getElementById("userEmail").value;
+        window.location.href = `signup.html?email=${encodeURIComponent(email)}`;
+      }
+  </script>
+
+</body>
+</html>

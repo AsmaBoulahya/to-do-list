@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img class="img" src="IMGs/TO__6_-removebg-preview.png" alt="Logo">
+    </div>
+    <form action="login.html" method="get">
+      <button type="submit" class="login-btn">Log In</button>
+    </form> 
+  </header>
+  <a href="page1.html" class="home-arrow-bottom" title="Accueil">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+  </a>
+
+  <main class="signup-container">
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <form action="signup.php" method="POST" class="signup-form">
+      <button type="button" class="google-btn" disabled title="Prochainement disponible">
+        <img src="IMGs/google-removebg-preview.png" alt="Google Icon" class="google-icon">
+        Continue with Google
+      </button>
+      <div class="separator"><span>OR</span></div>
+      <h2>Create an Account</h2>
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email"  id="signupEmail" name="email" placeholder="Email" required>
+
+      <div class="password-field">
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <i class="fa-solid fa-eye toggle-icon" id="togglePassword"></i>
+      </div>
+
+      <div class="password-field">
+        <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirm_password" required>
+        <i class="fa-solid fa-eye toggle-icon" id="toggleConfirmPassword"></i>
+      </div>
+
+      <p class="terms">By signing up, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+      <button type="submit" class="signup-submit">Join DoMe</button>
+    </form>
+  </main>
+  <script src="signup.js"></script>
+</body>
+</html>

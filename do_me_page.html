@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DoMe Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="do_me_page.css"/>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar()" role="button" tabindex="0">
+    <i class="fas fa-bars"></i>
+  </div>
+
+    <div class="profile">
+      <img src="IMGs/https://www.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png" alt="Profile" />
+    </div>
+    <div class="nav-links">
+      <button onclick="switchView('projects')"><i class="fas fa-folder-open"></i><span>Projects</span></button>
+      <button onclick="switchView('today')"><i class="fas fa-calendar-day"></i><span>Today</span></button>
+      <button onclick="switchView('calendar')"><i class="fas fa-calendar-alt"></i><span>Calendar</span></button>
+      <button onclick="switchView('pomodoro')"><i class="fas fa-stopwatch"></i><span>Pomodoro</span></button>
+      <button onclick="switchView('help')"><i class="fas fa-question-circle"></i><span>Help</span></button>
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search task..." onkeyup="searchTask()" />
+    </div>
+  </div>
+
+<div class="main">
+    <!-- PROJECTS SECTION -->
+    <div class="section" id="projects-section">
+      <div class="top-buttons">
+        <button class="active">Work</button>
+        <button>Personal</button>
+        <button>Education</button>
+      </div>
+
+      <div class="project-name">Selected Project: <span id="selectedProject">Work</span></div>
+
+      <div class="view-mode">
+        <button onclick="setViewMode('list')"><i class="fas fa-list"></i> List</button>
+        <button onclick="setViewMode('table')"><i class="fas fa-table"></i> Table</button>
+      </div>
+
+    <form class="task-form" method="POST" action="do_me_page.php" onsubmit="addTask(event)">
+      <input type="text" name="task_name" placeholder="Task Name" required />
+      <input type="text" name="responsible" placeholder="Responsible" required />
+      <input type="date" name="date" required />
+    <select name="priority">
+      <option>Urgent</option>
+      <option>High</option>
+      <option>Normal</option>
+      <option>Low</option>
+    </select>
+    <select name="category">
+      <option>Work</option>
+      <option>Personal</option>
+      <option>Education</option>
+    </select>
+    <select name="status">
+      <option>To Do</option>
+      <option>In Progress</option>
+      <option>Done</option>
+    </select>
+      <button type="submit">Add Task</button>
+  </form>
+
+      <div class="tasks list" id="tasksContainer"></div>
+</div>
+
+    <!-- OTHER SECTIONS -->
+    <div class="section" id="today-section" style="display:none">
+      <h2>Today's Tasks</h2>
+      <p>Display tasks due today...</p>
+    </div>
+
+    <div class="section" id="calendar-section" style="display: none;">
+      <h2>Calendar View</h2>
+      <div id="fullCalendar"></div>
+    </div>
+    <div class="section" id="pomodoro-section" style="display:none">
+      <div id="pomodoro">
+        <h3 id="status">Pomodoro: Travail</h3>
+
+        <label>Durée de travail (minutes) :</label>
+        <input type="number" id="workInput" value="25" min="1" max="180">
+
+        <label>Durée de pause (minutes) :</label>
+        <input type="number" id="breakInput" value="5" min="1" max="60">
+
+        <div id="timer">25:00</div>
+
+        <button onclick="startCustomTimer()">Lancer</button>
+        <button onclick="toggleTimer()">Pause / Reprendre</button>
+        <button onclick="resetTimer()">Réinitialiser</button>
+      </div>
+    </div>
+
+    <div class="section" id="help-section" style="display:none">
+  <h2>Need Help?</h2>
+    <div class="help-content">
+      <p>Welcome to your Dashboard! Here's a quick guide to help you navigate the app:</p>
+      <ul>
+        <li><strong>Projects:</strong> Create and manage tasks under different project categories.</li>
+        <li><strong>Today:</strong> View the tasks that are due today.</li>
+        <li><strong>Calendar:</strong> See your tasks and deadlines on a calendar view.</li>
+        <li><strong>Pomodoro:</strong> Stay focused with Pomodoro timer sessions. Work, then take a break!</li>
+        <li><strong>Search:</strong> Quickly find tasks by typing keywords in the search bar.</li>
+      </ul>
+      <p>If you need further assistance, feel free to ask your assistant below!</p>
+    </div>
+  </div>
+  </div>
+
+  <script src="do_me_page.js"></script>
+  <!-- FullCalendar JS -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+</body>
+</html>
