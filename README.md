@@ -72,8 +72,6 @@ ToDoList/
 │
 │── IMGs/               # Dossier contenant les images utilisées
 
-│── todolist.sql               # la base de donnée du site
-
 │── README.md           # Documentation du projet
 
 
