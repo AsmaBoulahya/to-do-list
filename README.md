@@ -24,6 +24,8 @@ HTML5 – structure du site
 
 CSS3 – mise en forme et design responsive
 
+JS - pour plus d'intéractivité
+
  PHP – pour gérer un stockage côté serveur
 ## 📸 Aperçu  
 
