@@ -32,30 +32,47 @@ CSS3 – mise en forme et design responsive
  ![Aperçu](IMGs/3.png)
  ![Aperçu](IMGs/4.png)
 
-## 🎥 Démo Vidéo  
 
-👉 [Voir la démo](IMGs/To-Do App-Opera 2025-05-12 22-58-28.mp4)  
 
  
 ToDoList/
 │── page1.html          # Page principale (accueil)
+
 │── page1.css           # Style de la page principale
+
 │── page1.js            # Script de la page principale
+
 │
+
 │── signup.html         # Page d'inscription
+
 │── signup.css          # Style de la page d'inscription
+
 │── signup.php          # Traitement de l'inscription
+
 │
+
 │── login.html          # Page de connexion
+
 │── login.css           # Style de la page de connexion
+
 │── login.php           # Traitement de la connexion
+
+
 │
 │── domepage.html       # Page de la To-Do List
+
 │── domepage.css        # Style de la To-Do List
+
 │── domepage.php        # Traitement de la To-Do List
+
+
 │
 │── IMGs/               # Dossier contenant les images utilisées
+
 │── README.md           # Documentation du projet
+
+
 
 
 
@@ -73,6 +90,7 @@ Utiliser Git & GitHub pour publier et gérer mes projets
 
 
 
+
 📌 Améliorations futures
 
 Ajouter une sauvegarde des tâches avec localStorage ou une base de données
@@ -80,6 +98,7 @@ Ajouter une sauvegarde des tâches avec localStorage ou une base de données
 Ajouter des catégories et des priorités pour les tâches
 
 Intégrer un mode sombre 🌙
+
 
 
 
