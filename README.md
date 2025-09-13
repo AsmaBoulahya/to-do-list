@@ -72,6 +72,11 @@ ToDoList/
 │
 │── IMGs/               # Dossier contenant les images utilisées
 
+│── todolist_app.sql       # contient la structure et les données de la base.Pour l’utiliser :  
+1. Ouvrez **phpMyAdmin**.  
+2. Créez une base de données `todolist_db`.  
+3. Cliquez sur **Importer** et choisissez `todolist.sql`. 
+
 │── README.md           # Documentation du projet
 
 
